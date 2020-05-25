@@ -256,11 +256,10 @@ export default {
             this.fetchData()
             this.dialogFormVisible = false
           }).catch(error => {
-            console.log('role create error: ' + error)
             this.$notify({
               title: '创建失败',
-              type: 'info',
-              message: '管理员创建失败',
+              type: 'error',
+              message: error,
               duration: 2000
             })
           })
@@ -287,11 +286,10 @@ export default {
             this.fetchData()
             this.dialogFormVisible = false
           }).catch(error => {
-            console.log('role update error: ' + error)
             this.$notify({
               title: '编辑失败',
               type: 'error',
-              message: '角色编辑失败',
+              message: error,
               duration: 2000
             })
           })
@@ -400,10 +398,9 @@ export default {
         this.listLoading = false
         this.currentPage = parseInt(meta.current_page)
         this.total = parseInt(meta.total)
-      }).catch(error => {
+      }).catch(() => {
         this.listLoading = false
         this.list = []
-        console.log('role get list error: ' + error)
       })
     }
   }

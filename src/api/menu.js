@@ -12,7 +12,7 @@ export function getList(params) {
 }
 
 export function createMenu(param) {
-  // console.log(param)
+  console.log(param)
   const params = {
     name: param.name,
     parent: param.parent,
@@ -33,7 +33,7 @@ export function editMenu(param) {
   const params = {
     name: param.name,
     parent: param.parent,
-    type: param.display === '1' && param.is_operation === '0' ? 1 : 0,
+    type: param.display === '1' && param.is_operation === '0' ? 0 : 1,
     url: param.url
   }
   const paramStr = genParam(params)

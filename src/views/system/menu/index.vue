@@ -50,14 +50,14 @@
         </el-form-item>
         <el-form-item label="菜单栏">
           <el-radio-group v-model="temp.display">
-            <el-radio label="1">是</el-radio>
-            <el-radio label="0">否</el-radio>
+            <el-radio label=1>是</el-radio>
+            <el-radio label=0>否</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item label="接口">
           <el-radio-group v-model="temp.is_operation">
-            <el-radio label="1">是</el-radio>
-            <el-radio label="0">否</el-radio>
+            <el-radio label=1>是</el-radio>
+            <el-radio label=0>否</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item label="接口地址">
@@ -104,8 +104,8 @@ export default {
       // 翻页相关数据 当前页，每页显示条数，排序方式，排序字段，符合条件的搜索结果数，搜索结果
       currentPage: 1,
       pageSize: 999,
-      sort: 'desc',
-      order: 'id',
+      sort: 'asc',
+      order: 'route',
       total: 0,
       list: [],
       queryName: '',
@@ -258,7 +258,7 @@ export default {
       getList(param).then(response => {
         const { data, meta } = response
         for (const item of data) {
-          if (item.display === '1' && item.is_operation === '0') {
+          if (item.display === 1 && item.is_operation === 0) {
             this.parentArr.push({ id: item.id, name: item.name })
           }
         }

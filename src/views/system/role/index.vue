@@ -190,7 +190,7 @@ export default {
             access: this.getAccessString()
           }
 
-          createRole(param).then(response => {
+          createRole(param).then(() => {
             this.dialogFormVisible = false
             this.$notify({
               title: '创建成功',
@@ -200,11 +200,11 @@ export default {
             })
             this.fetchData()
             this.dialogFormVisible = false
-          }).catch(() => {
+          }).catch(error => {
             this.$notify({
               title: '创建失败',
-              type: 'info',
-              message: '角色创建失败',
+              type: 'error',
+              message: error,
               duration: 2000
             })
           })
@@ -220,7 +220,7 @@ export default {
             access: this.getAccessString()
           }
 
-          editRole(param).then(response => {
+          editRole(param).then(() => {
             this.$notify({
               title: '编辑成功',
               type: 'success',
@@ -229,11 +229,11 @@ export default {
             })
             this.fetchData()
             this.dialogFormVisible = false
-          }).catch(() => {
+          }).catch(error => {
             this.$notify({
               title: '编辑失败',
               type: 'error',
-              message: '角色编辑失败',
+              message: error,
               duration: 2000
             })
           })

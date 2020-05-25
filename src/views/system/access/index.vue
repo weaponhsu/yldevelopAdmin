@@ -199,7 +199,7 @@ export default {
           }).catch(() => {
             this.$notify({
               title: '创建失败',
-              type: 'info',
+              type: 'error',
               message: '角色创建失败',
               duration: 2000
             })

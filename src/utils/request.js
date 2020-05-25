@@ -100,6 +100,8 @@ service.interceptors.response.use(
       //   duration: 5 * 1000
       // })
       return Promise.reject(error.response.data.errmsg)
+    } else if (error.response.status === 422 || error.response.status === 423) {
+      return Promise.reject(error.response.data.errmsg)
     } else {
       // Message({
       //   message: error.response.data.errmsg,

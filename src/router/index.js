@@ -119,50 +119,6 @@ export const asyncRoutes = [
     ]
   },
   {
-    path: '/alibaba',
-    component: Layout,
-    name: 'Alibaba',
-    meta: {
-      title: '1688商品管理',
-      icon: 'shop',
-      roles: ['阿里巴巴产品管理员', '阿里巴巴产品管理员']
-    },
-    children: [
-      {
-        path: 'category',
-        component: () => import('@/views/alibaba/category/index'),
-        meta: { title: '阿里巴巴产品分类管理', roles: ['阿里巴巴产品管理员'] }
-      },
-      {
-        path: 'product',
-        component: () => import('@/views/alibaba/product/index'),
-        meta: { title: '阿里巴巴产品管理', roles: ['阿里巴巴产品管理员'] }
-      }
-    ]
-  },
-  {
-    path: '/exchange',
-    component: Layout,
-    name: 'Exchange',
-    meta: {
-      title: '兑换商品管理',
-      icon: 'people',
-      roles: ['兑换商品分类管理', '兑换商品管理']
-    },
-    children: [
-      {
-        path: 'category',
-        component: () => import('@/views/exchange/category/index'),
-        meta: { title: '兑换商品分类管理', roles: ['兑换商品分类管理'] }
-      },
-      {
-        path: 'product',
-        component: () => import('@/views/exchange/product/index'),
-        meta: { title: '兑换商品管理', roles: ['兑换商品管理'] }
-      }
-    ]
-  },
-  {
     path: '/orders',
     component: Layout,
     name: 'Orders',
@@ -203,38 +159,6 @@ export const asyncRoutes = [
         path: 'member',
         component: () => import('@/views/member/member/index'),
         meta: { title: '会员管理', roles: ['会员管理'] }
-      },
-      {
-        path: 'address',
-        component: () => import('@/views/member/address/index'),
-        meta: { title: '会员收货地址管理', roles: ['会员收货地址管理'] }
-      }
-    ]
-  },
-  {
-    path: '/finance',
-    component: Layout,
-    name: 'Finance',
-    meta: {
-      title: '金币余额流水管理',
-      icon: 'money',
-      roles: ['财务管理']
-    },
-    children: [
-      {
-        path: 'withdraw',
-        component: () => import('@/views/finance/withdraw'),
-        meta: { title: '余额提现管理', roles: ['财务管理'] }
-      },
-      {
-        path: 'integral',
-        component: () => import('@/views/finance/integral'),
-        meta: { title: '金币流水管理', roles: ['财务管理'] }
-      },
-      {
-        path: 'balance',
-        component: () => import('@/views/finance/balance'),
-        meta: { title: '余额流水管理', roles: ['财务管理'] }
       }
     ]
   },
